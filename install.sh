@@ -30,7 +30,7 @@ sudo python3 setup.py install
 cd ..
 
 # - Alacritty
-sudo apt install curl -y
+sudo apt install cmake curl libfontconfig1-dev -y
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 exec bash
 cargo install alacritty
