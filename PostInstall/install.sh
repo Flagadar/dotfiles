@@ -27,4 +27,4 @@ sudo pip install qtile
 mkdir qextras
 cd qextras
 sudo git https://github.com/elParaguayo/qtile-extras
-sudo python setup.py
+sudo python3 setup.py
