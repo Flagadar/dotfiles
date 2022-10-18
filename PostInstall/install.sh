@@ -26,5 +26,5 @@ sudo pip install qtile
 # Qtile extras
 sudo git clone https://github.com/elParaguayo/qtile-extras
 cd qtile-extras
-sudo python3 setup.py
+sudo python3 ./setup.py
 cd ..
