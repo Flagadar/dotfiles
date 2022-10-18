@@ -35,6 +35,12 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 exec bash
 cargo install alacritty
 
+# - Helix
+git clone https://github.com/helix-editor/helix
+cd helix
+cargo install --path helix-term
+cd ..
+
 # - Copy config files
 sudo mkdir ~/.config
 sudo cp config/* ~/.config/
