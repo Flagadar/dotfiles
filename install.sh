@@ -62,6 +62,7 @@ cd ..
 # - Copy config files
 sudo mkdir ~/.config
 sudo cp -r ./config/* ~/.config/
+sudo chmod +x ~/.config/qtile/autostart.sh
 # Copy .desktop to Xsessions
 sudo mkdir /usr/share/xsessions
 sudo cp ./qtile.desktop /usr/share/xsessions
