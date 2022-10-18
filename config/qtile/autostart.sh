@@ -1,2 +1,2 @@
-#!/bin/bash
-picom &
+#!/bin/sh
+picom -b
