@@ -7,7 +7,7 @@ My WIP, messy config
 - Custom Widgets: Eww
 - Color Palette: Catpuccin
 ---
-Installation
+# Installation
 
 Clone the repository, and execute install.sh:
 ```bash
