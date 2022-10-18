@@ -24,7 +24,7 @@ sudo apt install libpangocairo-1.0-0 -y
 sudo apt install python3-pip python3-xcffib python3-cairocffi -y
 sudo pip install qtile
 # Qtile extras
-mkdir qextras
-cd qextras
-sudo git https://github.com/elParaguayo/qtile-extras
+sudo git clone https://github.com/elParaguayo/qtile-extras
+cd qtile-extras
 sudo python3 setup.py
+cd ..
