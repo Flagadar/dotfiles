@@ -13,7 +13,7 @@ sudo apt install git libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-d
 # Build / Install
 mkdir picom
 cd picom
-sudo git https://github.com/yshui/picom
+sudo git clone https://github.com/yshui/picom
 sudo git submodule update --init --recursive
 sudo meson --buildtype=release . build
 sudo ninja -C build install
