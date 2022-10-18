@@ -1,4 +1,4 @@
-# config
+# WIP, DO NOT INSTALL
 My WIP, messy config
 ---
 - Display Server: X11
