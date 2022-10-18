@@ -59,7 +59,7 @@ cd ..
 
 # - Copy config files
 sudo mkdir ~/.config
-sudo cp -r config/* ~/.config/
+sudo cp -r ./config/* ~/.config/
 # Copy .desktop to Xsessions
 sudo mkdir /usr/share/xsessions
-sudo cp qtile.desktop /usr/share/xsessions
+sudo cp ./qtile.desktop /usr/share/xsessions
