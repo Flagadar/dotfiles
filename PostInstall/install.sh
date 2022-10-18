@@ -19,6 +19,7 @@ sudo ninja -C build install
 cd ..
 
 # - Qtile
+sudo apt install python3 -y
 sudo apt install libpangocairo-1.0-0 -y
 sudo apt install python3-pip python3-xcffib python3-cairocffi -y
 sudo pip install qtile
