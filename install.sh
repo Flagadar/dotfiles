@@ -32,6 +32,7 @@ cd ..
 # - Alacritty
 sudo apt install cmake curl libfontconfig1-dev cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 -y
 sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+export PATH="/.cargo/bin:$PATH"
 git clone https://github.com/alacritty/alacritty
 cd alacritty
 cargo build --release --no-default-features --features=x11
