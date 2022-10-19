@@ -1,10 +1,14 @@
 import os
 import subprocess
-from libqtile import bar, layout, widget
+from libqtile import layout
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile import hook
+
+# Widgets form qtile_extras instead of libqtile
+from qtile_extras import widget, bar
+from qtile_extras.widget.decorations import RectDecoration
 
 mod = "mod4"
 terminal = guess_terminal()
@@ -50,10 +54,26 @@ keys = [
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
+    Key([mod, "control"], "r", lazy.restart(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
+
+decor_bar = {
+    "border-color": "#FF0000",
+    "border-width": 5,
+    "background" : "#600060",
+    "decorations": [
+        RectDecoration(colour="#600060", radius=10, filled=True, padding_y=4)
+    ]
+    }
+
+decor = {
+    "decorations": [
+        RectDecoration(colour="#600060", radius=10, filled=True, padding_y=4)
+    ],
+    "padding": 10,
+}
 
 groups = [Group(i) for i in "123456789"]
 
@@ -82,7 +102,7 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=6),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -106,9 +126,9 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
-                widget.CurrentLayout(),
+                widget.CurrentLayout(**decor),
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),
@@ -126,10 +146,12 @@ screens = [
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 widget.QuickExit(),
             ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            30,
+            margin=[5, 10, 5, 10],
+            #background="#FF0000",
+            **decor_bar
         ),
+        wallpaper="~/.config/qtile/wallpapers/debmag.png",
     ),
 ]
 
