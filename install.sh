@@ -60,6 +60,15 @@ cd helix
 cargo install --path helix-term
 cd ..
 
+# - Eww
+sudo apt install libglib2.0-dev libpango1.0-dev libgtk-3-dev
+git clone https://github.com/elkowar/eww
+cd eww
+cargo build --release
+sudo chmod +x ./eww
+#./eww daemon
+#./eww open <window_name>
+
 # - Copy config files
 sudo mkdir ~/.config
 sudo cp -r ./config/* ~/.config/
