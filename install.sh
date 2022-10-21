@@ -68,6 +68,12 @@ cargo build --release
 sudo chmod +x ./eww
 #./eww daemon
 #./eww open <window_name>
+cd ..
+
+# - Install Nerd Font
+curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/ProFont.zip
+unzip ProFont.zip
+cp ./ProFont/* ~/.local/share/fonts/
 
 # - Copy config files
 sudo mkdir ~/.config
