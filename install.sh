@@ -74,6 +74,7 @@ cd ..
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/ProFont.zip
 unzip ProFont.zip -d ProFont
 cp -r ./ProFont ~/.local/share/fonts/
+fc-cache -fv
 
 # - Copy config files
 sudo mkdir ~/.config
