@@ -71,9 +71,9 @@ sudo chmod +x ./eww
 cd ..
 
 # - Install Nerd Font
-curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/ProFont.zip
-unzip ProFont.zip
-cp ./ProFont/* ~/.local/share/fonts/
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/ProFont.zip
+unzip ProFont.zip -d ProFont
+cp -r ./ProFont ~/.local/share/fonts/
 
 # - Copy config files
 sudo mkdir ~/.config
