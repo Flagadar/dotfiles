@@ -1,22 +1,23 @@
 import os
 import subprocess
-from libqtile import layout
+from libqtile import layout, widget, bar, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
-from libqtile import hook
-
-# Widgets form qtile_extras instead of libqtile
-from qtile_extras import widget, bar
-from qtile_extras.widget.decorations import RectDecoration
 
 mod = "mod4"
 terminal = guess_terminal()
 
+update_sh = os.path.expanduser('~/.config/qtile/scripts/update.sh')
+
 @hook.subscribe.startup
 def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    home = os.path.expanduser('~/.config/qtile/scripts/autostart.sh')
     subprocess.Popen([home])
+
+@hook.subscribe.setgroup
+def setgroup():
+    subprocess.Popen(['/home/debu/.config/qtile/scripts/update.sh'])
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -59,23 +60,7 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
-decor_bar = {
-    "border-color": "#FF0000",
-    "border-width": 5,
-    "background" : "#600060",
-    "decorations": [
-        RectDecoration(colour="#600060", radius=10, filled=True, padding_y=4)
-    ]
-    }
-
-decor = {
-    "decorations": [
-        RectDecoration(colour="#600060", radius=10, filled=True, padding_y=4)
-    ],
-    "padding": 10,
-}
-
-groups = [Group(i) for i in "123456789"]
+groups = [Group(i) for i in "azert"]
 
 for i in groups:
     keys.extend(
@@ -125,34 +110,7 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 screens = [
-    Screen(
-        top=bar.Bar(
-            [
-                widget.CurrentLayout(**decor),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
-                # widget.StatusNotifier(),
-                widget.Systray(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
-            ],
-            30,
-            margin=[5, 10, 5, 10],
-            #background="#FF0000",
-            **decor_bar
-        ),
-        wallpaper="~/.config/qtile/wallpapers/debmag.png",
-    ),
+    Screen(wallpaper="~/.config/qtile/wallpapers/debmag.png"),
 ]
 
 # Drag floating layouts.

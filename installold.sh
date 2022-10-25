@@ -1,5 +1,40 @@
-#!/bin/bash/
-# - Debian Post Installation Script
+#!/bin/bash
+
+############################################################
+#
+# Debian Post Installation Script
+# 
+# My post install script with my dotfiles, 
+# custom DE and needed utilities.
+#
+# OPTIONS:
+#
+#   -i, --install TODO
+#     Install everything, with my current dotfiles   
+#
+#   -c, --check TODO
+#     Outputs already installed dependencies, 
+#     as well as their versions
+#
+#   -u, --update TODO
+#     Update out of date dependencies
+#
+# ---------------------------------------------------------
+#
+# These options below are for my personal use, 
+# they will ERASE YOUR CONFIGS!
+# Don't use them if you don't want the exact same 
+# config as me
+#
+#   -d, --dotfiles TODO
+#     Update MY DOTFILES
+#     DON'T USE if you have your custom config!
+#
+#   -a, --all TODO
+#     Update everything INCLUDING MY DOTFILES! 
+#     Don't use it if you have a custom config!
+#
+############################################################
 
 sudo apt update -y
 sudo apt upgrade -y

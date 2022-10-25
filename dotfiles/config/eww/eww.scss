@@ -1,0 +1,85 @@
+$cat-rosewater: #f2d5cf;
+$cat-flamingo: #eebebe;
+$cat-pink: #f4b8e4;
+$cat-mauve: #ca9ee6;
+$cat-red: #e78284;
+$cat-maroon: #ea999c;
+$cat-peach: #ef9f76;
+$cat-yellow: #e5c890;
+$cat-green: #a6d189;
+$cat-teal: #81c8be;
+$cat-sky: #99d1db;
+$cat-sapphire: #85c1dc;
+$cat-blue: #8caaee;
+$cat-lavender: #babbf1;
+$cat-text: #c6d0f5;
+$cat-subtext1: #b5bfe2;
+$cat-subtext0: #a5adce;
+$cat-overlay2: #949cbb;
+$cat-overlay1: #838ba7;
+$cat-overlay0: #737994;
+$cat-surface2: #626880;
+$cat-surface1: #51576d;
+$cat-surface0: #414559;
+$cat-base: #303446;
+$cat-mantle: #292c3c;
+$cat-crust: #232634;
+
+.bars {
+  border-radius: 20;
+  background-color: rgba($cat-mantle, 1.0);
+}
+
+.example {
+  border-radius: 20;
+  margin: {
+    top: 4px;
+    bottom: 4px;
+    left: 8px;
+    right: 8px;
+  }
+  background-color: rgba($cat-crust, 1.0);
+  }
+
+.greeter {
+  font-family: 'ProFontIIx Nerd Font';
+  font-size: 20px;
+  border-radius: 20;
+  margin: 4px 8px;
+  background-color: rgba($cat-red, 1.0);
+}
+
+.button-menu {
+  font: {
+    family: 'ProFontIIx Nerd Font';
+    size: 20px;
+  }  
+  
+  background-color: rgba($cat-red, 1.0);
+  border-radius: 20;
+  margin: 4px 8px;
+    
+  &:hover {
+    background-color: rgba(#d36e70, 1.0);
+  }
+}
+
+.datetime {
+  background-color: rgba($cat-red, 1.0);
+  border-radius: 20;
+}
+
+.resources {
+  background-color: rgba($cat-lavender, 1.0);
+  border-radius: 20;
+}
+
+.music {
+  background-color: rgba($cat-green, 1.0);
+  border-radius: 20;
+}
+
+.workspaces {
+  background-color: rgba($cat-blue, 1.0);
+  border-radius: 20;
+}
