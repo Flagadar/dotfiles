@@ -4,8 +4,13 @@ name="Custom DE"
 version=0.1
 
 scriptdir="./dotfiles"
+declare -a errors
 
-trap install ERR EXIT
+trap 'catch $? $LINENO' ERR EXIT
+
+catch() {
+  errors+=("Error: $1 occured on line $2")
+}
 
 install() {
   source $scriptdir/install.sh
