@@ -32,7 +32,7 @@ sudo apt-get install python3 libpangocairo-1.0-0 python3-pip python3-xcffib pyth
 sudo pip install qtile
 
 echo "Installing Alacritty:"
-sudo apt-get install cmake curl libfontconfig1-dev cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev -y
+sudo apt-get install cmake curl libfontconfig1-dev cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev desktop-file-utils -y
 sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 export PATH="$HOME/.cargo/bin:$PATH"
 git clone https://github.com/alacritty/alacritty
@@ -43,8 +43,8 @@ git clone https://github.com/alacritty/alacritty
   sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
   sudo cp target/release/alacritty /usr/local/bin # or anywhere else in $PATH
   sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
-  sudo sh desktop-file-install extra/linux/Alacritty.desktop
-  sudo sh update-desktop-database
+  sudo desktop-file-install extra/linux/Alacritty.desktop
+  sudo update-desktop-database
   sudo mkdir -p /usr/local/share/man/man1
   gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null
   gzip -c extra/alacritty-msg.man | sudo tee /usr/local/share/man/man1/alacritty-msg.1.gz > /dev/null
