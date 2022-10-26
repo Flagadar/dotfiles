@@ -84,3 +84,5 @@ sudo chmod +x ~/.config/qtile/scripts/autostart.sh
 # Copy .desktop to Xsessions
 sudo mkdir /usr/share/xsessions
 sudo cp ./qtile.desktop /usr/share/xsessions
+
+echo 2>&1
