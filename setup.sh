@@ -5,6 +5,12 @@ version=0.1
 
 scriptdir="./dotfiles"
 
+trap install ERR EXIT
+
+install() {
+  source $scriptdir/install.sh
+}
+
 help()
 {
 echo
@@ -51,7 +57,7 @@ optstring=":hi"
 while getopts $optstring option; do
   case $option in
     i)# Install
-      source $scriptdir/install.sh
+      install
       exit;;
     h)# Display help
       help
