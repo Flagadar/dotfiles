@@ -15,6 +15,11 @@ sudo apt-get install git -y
 echo "Installing Zsh..."
 sudo apt-get install zsh -y
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Custom theme "Headline"
+(
+  cd ~/.oh-my-zsh/themes/
+  wget https://raw.githubusercontent.com/moarram/headline/main/headline.zsh-theme
+)
 
 echo "Installing Picom:"
 #Installing dependencies
