@@ -9,11 +9,12 @@ sudo apt-get install lightdm -y
 echo "Installing display manager:"
 sudo apt-get install xorg -y
 
-echo "Installing Zsh..."
-sudo apt-get install zsh -y
-
 echo "Installing Git:"
 sudo apt-get install git -y
+
+echo "Installing Zsh..."
+sudo apt-get install zsh -y
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Installing Picom:"
 #Installing dependencies
