@@ -1,19 +1,16 @@
 #!/bin/bash
 
 name="Custom DE"
-version=0.1
+version=0.11
 
 scriptdir="./dotfiles"
-declare -a errors
-
-trap 'catch $? $LINENO' ERR EXIT
-
-catch() {
-  errors+=("Error: $1 occured on line $2")
-}
 
 install() {
   source $scriptdir/install.sh
+}
+
+config() {
+  source $scriptdir/config.sh
 }
 
 help()
@@ -27,11 +24,11 @@ echo
 echo "  -i, --install"
 echo "    Install everything, with my current dotfiles"
 echo
-echo "  -c, --check"
+echo "  -c, --check" TODO
 echo "    Outputs already installed dependencies," 
 echo "    as well as their versions"
 echo 
-echo "  -u, --update"
+echo "  -u, --update" TODO
 echo "    Update out of date dependencies"
 echo 
 echo "  -h, --help"
@@ -44,11 +41,11 @@ echo "they will ERASE YOUR CONFIGS!"
 echo "Don't use them if you don't want the exact same"
 echo "config as me"
 echo 
-echo "  -d, --dotfiles"
+echo "  -d, --dotfiles" 
 echo "    Update MY DOTFILES"
 echo "    DON'T USE if you have your custom config!"
 echo
-echo "  -a, --all"
+echo "  -a, --all" TODO
 echo "    Update everything INCLUDING MY DOTFILES!" 
 echo "    Don't use it if you have a custom config!"
 echo
@@ -56,13 +53,16 @@ echo
 
 echo "$name, version $version"
 
-optstring=":hi"
+optstring=":hid"
 
 # Parse options
 while getopts $optstring option; do
   case $option in
     i)# Install
       install
+      exit;;
+    d)# Copy config files
+      config
       exit;;
     h)# Display help
       help

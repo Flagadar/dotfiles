@@ -9,6 +9,9 @@ sudo apt-get install lightdm -y
 echo "Installing display manager:"
 sudo apt-get install xorg -y
 
+echo "Installing Zsh..."
+sudo apt-get install zsh -y
+
 echo "Installing Git:"
 sudo apt-get install git -y
 
@@ -19,13 +22,18 @@ sudo apt-get install libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-d
 git clone https://github.com/yshui/picom
 (
   cd picom
-  sudo git submodule update --init --recursive
+  git submodule update --init --recursive
   sudo meson --buildtype=release . build
+  sudo ninja -C build
   sudo ninja -C build install
 )
 
 echo "Installing fff:"
-sudo apt-get install fff -y
+git clone https://github.com/dylanaraps/fff
+(
+  cd fff
+  sudo make install
+)
 
 echo "Installing Qtile:"
 sudo apt-get install python3 libpangocairo-1.0-0 python3-pip python3-xcffib python3-cairocffi -y
@@ -78,15 +86,5 @@ echo "Installing Nerd Font:"
 sudo apt-get install unzip -y
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/ProFont.zip
 unzip ProFont.zip -d ProFont
-cp -r ./ProFont ~/.local/share/fonts/
+sudo cp -r ./ProFont ~/.local/share/fonts/
 fc-cache -fv
-
-echo "Copying configuration files:"
-sudo mkdir ~/.config
-sudo cp -r ./dotfiles/config/* ~/.config/
-sudo chmod +x ~/.config/qtile/scripts/autostart.sh
-# Copy .desktop to Xsessions
-sudo mkdir /usr/share/xsessions
-sudo cp ./qtile.desktop /usr/share/xsessions
-
-echo 2>&1
