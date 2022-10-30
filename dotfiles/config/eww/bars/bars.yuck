@@ -1,0 +1,10 @@
+(include "./bars/controlcenter.yuck")
+(include "./bars/music.yuck")
+(include "./bars/system.yuck")
+
+(defwidget topbar []
+	(centerbox :class "example"
+		 	   :orientation "h"
+		(menu)
+		(music)
+		(infos)))

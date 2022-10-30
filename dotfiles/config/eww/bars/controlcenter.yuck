@@ -1,0 +1,17 @@
+(defwidget menu []
+	(box :orientation "h"
+		 :space-evenly "false"
+		 :halign "start"
+	(button-menu)
+	(workspaces)))
+
+(defwidget button-menu []
+	(eventbox :class "button-menu"
+			  :orientation "h"
+		 (label :text ""
+			    :width 40)))
+
+(defwidget workspaces []
+	(box :class "workspaces"
+		 :orientation "h"
+		 (label :text "12345")))
