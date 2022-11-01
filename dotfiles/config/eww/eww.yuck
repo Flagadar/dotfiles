@@ -1,6 +1,18 @@
 (include "./bars/bars.yuck")
 
-(defwindow bars
+(defwindow leftbar
+	:monitor 0
+	:windowtype "dock"
+	:geometry (geometry :x "0%"
+						:y "5px"
+						:width "90%"
+						:height "10px"
+						:anchor "top left")
+	:stacking "fg"
+	:reserve (struts :side "top" :distance "45px")
+	(left))
+
+(defwindow centerbar
 	:monitor 0
 	:windowtype "dock"
 	:geometry (geometry :x "0%"
@@ -10,4 +22,17 @@
 						:anchor "top center")
 	:stacking "fg"
 	:reserve (struts :side "top" :distance "45px")
-	(topbar))
+	(center))
+
+(defwindow rightbar
+	:monitor 0
+	:windowtype "dock"
+	:geometry (geometry :x "0%"
+						:y "5px"
+						:width "90%"
+						:height "10px"
+						:anchor "top right")
+	:stacking "fg"
+	:reserve (struts :side "top" :distance "45px")
+	(right))
+

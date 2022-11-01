@@ -2,9 +2,17 @@
 (include "./bars/music.yuck")
 (include "./bars/system.yuck")
 
-(defwidget topbar []
-	(centerbox :class "example"
+(defwidget leftbar []
+	(box :class "example"
 		 	   :orientation "h"
-		(menu)
-		(music)
+		(menu)))
+
+(defwidget centerbar []
+	(box :class "example"
+		 	   :orientation "h"
+		(music)))
+
+(defwidget rightbar []
+	(box :class "example"
+		 	   :orientation "h"
 		(infos)))
