@@ -5,7 +5,7 @@
 	:windowtype "dock"
 	:geometry (geometry :x "0%"
 						:y "5px"
-						:width "90%"
+						:width "10%"
 						:height "10px"
 						:anchor "top left")
 	:stacking "fg"
@@ -17,7 +17,7 @@
 	:windowtype "dock"
 	:geometry (geometry :x "0%"
 						:y "5px"
-						:width "90%"
+						:width "10%"
 						:height "10px"
 						:anchor "top center")
 	:stacking "fg"
@@ -29,9 +29,9 @@
 	:windowtype "dock"
 	:geometry (geometry :x "0%"
 						:y "5px"
-						:width "90%"
+						:width "10%"
 						:height "10px"
-						:anchor "top center")
+						:anchor "top right")
 	:stacking "fg"
 	:reserve (struts :side "top" :distance "45px")
 	(right))
