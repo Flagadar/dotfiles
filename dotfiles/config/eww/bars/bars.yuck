@@ -5,14 +5,17 @@
 (defwidget left []
 	(box :class "example"
 		 	   :orientation "h"
+			   :align "left"
 		(menu)))
 
 (defwidget center []
 	(box :class "example"
 		 	   :orientation "h"
+			   :align "center"
 		(music)))
 
 (defwidget right []
 	(box :class "example"
 		 	   :orientation "h"
+			   :align "right"
 		(infos)))
