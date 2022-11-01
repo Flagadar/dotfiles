@@ -31,7 +31,7 @@
 						:y "5px"
 						:width "90%"
 						:height "10px"
-						:anchor "top right")
+						:anchor "top center")
 	:stacking "fg"
 	:reserve (struts :side "top" :distance "45px")
 	(right))
