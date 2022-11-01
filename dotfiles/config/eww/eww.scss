@@ -25,18 +25,7 @@ $cat-base: #303446;
 $cat-mantle: #292c3c;
 $cat-crust: #232634;
 
-.leftbar {
-  border-radius: 20;
-  background-color: rgba($cat-mantle, 1.0);
-}
-
-.centerbar {
-  border-radius: 20;
-  background-color: rgba($cat-mantle, 1.0);
-}
-
-.rightbar {
-  border-radius: 20;
+.bar {
   background-color: rgba($cat-mantle, 1.0);
 }
 
