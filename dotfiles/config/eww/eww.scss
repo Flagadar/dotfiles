@@ -26,7 +26,7 @@ $cat-mantle: #292c3c;
 $cat-crust: #232634;
 
 .bar {
-  background-color: rgba($cat-mantle, 0.0);
+  background-color: rgba($cat-mantle, 0.5);
 }
 
 .example {
@@ -37,7 +37,7 @@ $cat-crust: #232634;
     left: 4px;
     right: 4px;
   }
-  background-color: rgba($cat-crust, 0.4);
+  background-color: rgba($cat-crust, 0.0);
   }
 
 .greeter {
