@@ -10,7 +10,5 @@
 						:anchor "top center")
 	:stacking "fg"
 	:reserve (struts :side "top" :distance "5%")
-	(left)
-	(center)
-	(right))
+	(barwidgets))
 
