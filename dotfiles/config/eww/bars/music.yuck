@@ -1,6 +1,0 @@
-(defwidget music []
-	(box :class "music"
-		 :orientation "h"
-		 :space-evenly "false"
-		 :halign "center"
-		 (label :text "music")))
