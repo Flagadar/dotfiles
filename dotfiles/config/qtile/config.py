@@ -54,7 +54,7 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
-groups = [Group(i) for i in "azert"]
+groups = [Group(i) for i in "12345"]
 
 for i in groups:
     keys.extend(

@@ -34,13 +34,6 @@ git clone https://github.com/yshui/picom
   sudo ninja -C build install
 )
 
-echo "Installing fff:"
-git clone https://github.com/dylanaraps/fff
-(
-  cd fff
-  sudo make install
-)
-
 echo "Installing Qtile:"
 sudo apt-get install python3 libpangocairo-1.0-0 python3-pip python3-xcffib python3-cairocffi -y
 sudo pip install qtile
@@ -71,22 +64,14 @@ git clone https://github.com/alacritty/alacritty
   echo "source ~/.bash_completion/alacritty" >> ~/.bashrc
 )
 
-echo "Installing Helix:"
-git clone https://github.com/helix-editor/helix
-(
-  cd helix
-  cargo install --path helix-term
-)
-
-echo "Installing Eww:"
-sudo apt-get install libglib2.0-dev libpango1.0-dev libgtk-3-dev -y
-git clone https://github.com/elkowar/eww
-(
-  cd eww
-  cargo build --release
-  sudo chmod +x ./eww
-  sudo cp ./target/release/eww /usr/local/bin/
-)
+echo "Installing Codium:"
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+    | gpg --dearmor \
+    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs vscodium main' \
+    | sudo tee /etc/apt/sources.list.d/vscodium.list
+sudo apt update
+sudo apt install codium codium-insiders
 
 echo "Installing Nerd Font:"
 sudo apt-get install unzip -y
